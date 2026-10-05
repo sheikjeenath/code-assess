@@ -157,7 +157,7 @@ CodeAssess/
 ## Clone Repository
 
 ```bash
-git clone https://github.com/Deepthi-Singanapudi/CodeAssess.git
+git clone https://github.com/sheikjeenath/code-assess.git
 ```
 
 ---
@@ -263,10 +263,10 @@ This project strengthened my knowledge of:
 
 # 👨‍💻 Author
 
-**Sri Deepthi Singanapudi**
+**Sheik Jeenath Unnisa Begum**
 
 GitHub:
-https://github.com/Deepthi-Singanapudi
+https://github.com/sheikjeenath
 
 
 ## ⭐ If you found this project interesting, consider giving it a star!
