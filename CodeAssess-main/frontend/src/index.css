@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #aa3bff;
+  --color-primary-hover: #962ee6;
+  --color-dark-bg: #0b0c10;
+  --color-dark-surface: #12131a;
+  --color-dark-card: #1a1c26;
+  --color-dark-border: #262938;
+  --color-dark-text-primary: #f3f4f6;
+  --color-dark-text-secondary: #9ca3af;
+  --color-dark-text-muted: #6b7280;
+  
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* Base resets & custom scrollbars */
+@layer base {
+  body {
+    background-color: var(--color-dark-bg);
+    color: var(--color-dark-text-primary);
+    font-family: var(--font-sans);
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--color-dark-bg);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-dark-border);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary);
+  }
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(18, 19, 26, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(38, 41, 56, 0.6);
+}
+
+.glass-card {
+  background: rgba(26, 28, 38, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(38, 41, 56, 0.5);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(170, 59, 255, 0.4);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.glass-input {
+  background: rgba(18, 19, 26, 0.8);
+  border: 1px solid var(--color-dark-border);
+  color: var(--color-dark-text-primary);
+  transition: all 0.2s ease-in-out;
+}
+
+.glass-input:focus {
+  border-color: var(--color-primary);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(170, 59, 255, 0.2);
+}
+
+/* Micro-animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pulse-border {
+  0%, 100% { border-color: rgba(38, 41, 56, 0.5); }
+  50% { border-color: rgba(170, 59, 255, 0.5); }
+}
+
+.animate-border-pulse {
+  animation: pulse-border 2s infinite ease-in-out;
+}
+
+/* Diff styles for improved code views */
+.diff-added {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+}
+
+.diff-removed {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+}
